@@ -4,7 +4,7 @@ set -x
 # Basically we will have an array and then the base backup path
 
 # Additional `rclone sync` arguments, see `rclone sync --help` for more info
-additional_rclone_args="-MP"
+additional_rclone_args="-MP --links --ignore-errors"
 
 __usage() {
     echo "Usage: $0 [restore]"
@@ -21,7 +21,24 @@ base_backup_path="/media/nas/stuff/sync-backup"
 
 # Relative to $HOME
 folder_sync=(
+    ".config/zed"
+    ".config/MusicBrainz"
+    ".config/Zelda64Recompiled"
+    ".config/sccache"
+    ".config/user-tmpfiles.d"
+    "Monero"
+    ".ssh"
+    ".krew"
+    
+    ".kube"
+    ".gnupg"
     "Games"
+    "Documents"
+    "Pictures"
+    "Videos"
+    "Desktop"
+    "AppImages"
+    
 )
 
 if [ "$1" == "restore" ]; then
