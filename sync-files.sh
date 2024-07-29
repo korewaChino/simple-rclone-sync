@@ -21,6 +21,7 @@ base_backup_path="/media/nas/stuff/sync-backup"
 
 # Relative to $HOME
 folder_sync=(
+    ".gitconfig"
     ".config/zed"
     ".config/MusicBrainz"
     ".config/Zelda64Recompiled"
@@ -29,7 +30,6 @@ folder_sync=(
     "Monero"
     ".ssh"
     ".krew"
-    
     ".kube"
     ".gnupg"
     "Games"
